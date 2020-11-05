@@ -24,12 +24,9 @@ var tbody = d3.select("#ufo-table");
 function createTable(tableData) {
     // Having the variable for tbody, we can create 
     // and modify rows of data.
-    console.log("Test sucesss 2");
-    console.log(tableData);
     tableData.forEach(function(ufoInfo){
         var row = tbody.append("tr");
 
-        console.log("Test success 3");
         // Append a data value to the row for 
         // each of the required info columns
 
@@ -72,8 +69,8 @@ submitButton.on("click", function() {
     let filterData =  tableData;
     var filteredData = filterData.filter(tbody => tbody.datetime === DatetimeValue);
 
-    console.log("Test success 1");
-    console.log(DatetimeValue);
+    
+    
     createTable(filteredData);
 
 });
