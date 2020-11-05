@@ -25,6 +25,11 @@ function createTable(tableData) {
     // Having the variable for tbody, we can create 
     // and modify rows of data.
     tableData.forEach(function(ufoInfo){
+        
+        
+        
+         
+
         var row = tbody.append("tr");
 
         // Append a data value to the row for 
@@ -44,16 +49,16 @@ function createTable(tableData) {
 
 
 
-
 // Uses D3.js to select the submit button
 var submitButton = d3.select("#filter-btn");
+
 
 
 // Event listener and in-line function to handle
 // click event on the Submit button
 submitButton.on("click", function() {
-    var row = d3.select("tbody").selectAll("td");
-    row.remove();
+    tbody.selectAll("td").remove();
+
 
     // Make sure the page doesn't refresh on entry
     d3.event.preventDefault();
@@ -74,3 +79,4 @@ submitButton.on("click", function() {
     createTable(filteredData);
 
 });
+
