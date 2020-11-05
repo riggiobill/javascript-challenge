@@ -5,6 +5,8 @@ var tableData = data;
 // by using a forEach function and a basic console log
 // reporting function.
 
+
+
 // Create the function
 function check_info(check) {
     console.log(`${check.city}: ${check.state}`);
@@ -18,6 +20,9 @@ tableData.forEach(check_info);
 // Create reference variable for the table body using D3.js
 //var table = d3.select("#ufo-table");
 var tbody = d3.select("#ufo-table");
+
+
+
 
 
 
@@ -60,8 +65,9 @@ submitButton.on("click", function() {
     tbody.selectAll("td").remove();
 
 
+
     // Make sure the page doesn't refresh on entry
-    d3.event.preventDefault();
+    //d3.event.preventDefault();
     
 
     // Using D3, extract and select the datetime element and value
