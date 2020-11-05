@@ -64,7 +64,7 @@ var submitButton = d3.select("#filter-btn");
 submitButton.on("click", function() {
     tbody.selectAll("td").remove();
 
-
+    
 
     // Make sure the page doesn't refresh on entry
     //d3.event.preventDefault();
