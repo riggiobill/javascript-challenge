@@ -16,18 +16,21 @@ tableData.forEach(check_info);
 
 
 // Create reference variable for the table body using D3.js
-var tbody = d3.select("#ufo-tbody");
+//var table = d3.select("#ufo-table");
+var tbody = d3.select("#ufo-table");
 
 
 
 function createTable(tableData) {
     // Having the variable for tbody, we can create 
     // and modify rows of data.
-
-    tableData.forEach(function(ufoInfo) {
+    console.log("Test sucesss 2");
+    console.log(tableData);
+    tableData.forEach(function(ufoInfo){
         var row = tbody.append("tr");
 
-        // Append a data vallue to the row for 
+        console.log("Test success 3");
+        // Append a data value to the row for 
         // each of the required info columns
 
         //datetime
@@ -52,8 +55,25 @@ var submitButton = d3.select("#filter-btn");
 // Event listener and in-line function to handle
 // click event on the Submit button
 submitButton.on("click", function() {
+    var row = d3.select("tbody").selectAll("td");
+    row.remove();
+
+    // Make sure the page doesn't refresh on entry
+    d3.event.preventDefault();
+    
+
+    // Using D3, extract and select the datetime element and value
+    var DatetimeElement = d3.select("#datetime");
+    var DatetimeValue = DatetimeElement.property("value");
 
 
-    // ultimately this in-line function will call createTable using
-    // data filtered with the date collected from the submit button
+    // Prepares and filters the data based on the input date,
+    // then returns by calling the createTable function.
+    let filterData =  tableData;
+    var filteredData = filterData.filter(tbody => tbody.datetime === DatetimeValue);
+
+    console.log("Test success 1");
+    console.log(DatetimeValue);
+    createTable(filteredData);
+
 });
