@@ -24,6 +24,21 @@ function createTable(tableData) {
     // Having the variable for tbody, we can create 
     // and modify rows of data.
 
+    tableData.forEach(function(ufoInfo) {
+        var row = tbody.append("tr");
+
+        // Append a data vallue to the row for 
+        // each of the required info columns
+
+        //datetime
+        row.append("td").attr('scope','row').text(ufoInfo.datetime);
+        row.append("td").text(ufoInfo.city);
+        row.append("td").text(ufoInfo.state);
+        row.append("td").text(ufoInfo.country);
+        row.append("td").text(ufoInfo.shape);
+        row.append("td").text(ufoInfo.comments);
+    });
+
 
 }
 
