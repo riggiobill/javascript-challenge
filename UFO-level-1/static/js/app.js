@@ -67,7 +67,7 @@ submitButton.on("click", function() {
     
 
     // Make sure the page doesn't refresh on entry
-    //d3.event.preventDefault();
+    d3.event.preventDefault();
     
 
     // Using D3, extract and select the datetime element and value
